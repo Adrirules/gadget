@@ -57,6 +57,8 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "dotenv-rails"
 
+gem "simple_form", github: "heartcombo/simple_form"
+
 end
 
 group :development do
