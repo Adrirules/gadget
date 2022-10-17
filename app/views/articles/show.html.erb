@@ -1,15 +1,26 @@
 hello from show.html.erb
 <h1><%=@article.title %></h1>
-<p><%=@article.chapo %></p>
+  <p><%=@article.chapo %></p>
+  <p>
+  <% if @article.cover.attached?%>
+  <%=cl_image_tag @article.cover.key , alt: @article.image, height: 400, width: 400, crop: :fill  %>
+  <% end %>
+  </p>
 
-<p><%=@article.image%> </p>
-<p><%=@article.content%> </p>
-<p><%=@article.category %></p>
-<p><%=@article.tag %></p>
-<p><%=@article.author%> </p>
+  <p>
+  <% if @article.photo.attached?%>
+  <%=cl_image_tag @article.photo.key , alt: @article.image, height: 400, width: 400, crop: :fill  %>
+  <% end %>
+  </p>
 
-<%= link_to "Edit", edit_article_path(@article) %>
-<%= link_to "All", root_path%>
+  <p><%=@article.image%> </p>
+  <p><%=@article.content%> </p>
+  <p><%=@article.category %></p>
+  <p><%=@article.tag %></p>
+  <p><%=@article.author%> </p>
+
+<p><%= link_to "Edit", edit_article_path(@article) %></p>
+<p><%= link_to "All", root_path%></p>
 
 <div>
 <%= button_to "Destroy", @article , method: :delete, data: { confirm: 'Are you sure?' } %>
