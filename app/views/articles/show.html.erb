@@ -9,7 +9,7 @@ hello from show.html.erb
 <p><%=@article.author%> </p>
 
 <%= link_to "Edit", edit_article_path(@article) %>
-<%= link_to "All", articles_path%>
+<%= link_to "All", root_path%>
 
 <div>
 <%= button_to "Destroy", @article , method: :delete, data: { confirm: 'Are you sure?' } %>

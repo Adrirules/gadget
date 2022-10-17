@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
-  resources :articles do
-    collection do
-      get :author
-    end
-  end
+  root to: "articles#index"
+  resources :articles, except: :index
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
