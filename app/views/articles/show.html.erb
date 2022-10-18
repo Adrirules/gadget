@@ -19,9 +19,18 @@ hello from show.html.erb
   <p><%=@article.tag %></p>
   <p><%=@article.author%> </p>
 
-<p><%= link_to "Edit", edit_article_path(@article) %></p>
+<% if policy(@article).edit?  %>
+  <p>
+    <%= link_to "Edit", edit_article_path(@article) %>
+  </p>
+<% end %>
+<% if policy(@article).destroy?  %>
+  <div>
+    <%= button_to "Destroy", @article , method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
+
+
 <p><%= link_to "All", root_path%></p>
 
-<div>
-<%= button_to "Destroy", @article , method: :delete, data: { confirm: 'Are you sure?' } %>
-</div>
+

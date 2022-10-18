@@ -18,20 +18,12 @@ class ArticlePolicy < ApplicationPolicy
     true
   end
 
-  def new?
-    create?
-  end
-
   def update?
-    true
-  end
-
-  def edit?
-    update?
+    record.user == user
   end
 
   def destroy?
-    true
+    record.user == user
   end
 
 
