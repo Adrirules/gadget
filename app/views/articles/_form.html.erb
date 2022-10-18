@@ -1,13 +1,14 @@
-<%= simple_form_for(article) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :chapo %>
-  <%= f.input :cover, as: :file %>
-  <%= f.input :content %>
-  <%= f.input :photo, as: :file %>
-  <%= f.input :image %>
-  <%= f.input :category %>
-  <%= f.input :tag %>
-  <%= f.input :author %>
-  <%= f.submit %>
-<% end %>
-
+<div class="container">
+  <%= simple_form_for(article) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :chapo %>
+    <%= f.input :cover, as: :file %>
+    <%= f.input :content %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :image %>
+    <%= f.input :category %>
+    <%= f.input :tag %>
+    <%= f.input :author %>
+    <%= f.submit %>
+  <% end %>
+</div>

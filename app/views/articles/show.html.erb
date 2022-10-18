@@ -26,7 +26,7 @@ hello from show.html.erb
 <% end %>
 <% if policy(@article).destroy?  %>
   <div>
-    <%= button_to "Destroy", @article , method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= button_to "Destroy", @article, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 <% end %>
 

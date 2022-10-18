@@ -14,7 +14,6 @@ class ArticlePolicy < ApplicationPolicy
     true
   end
 
-
   def create?
     record.user == user || user.admin
   end
