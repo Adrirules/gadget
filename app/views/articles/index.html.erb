@@ -1,25 +1,23 @@
-hello from index.html.erb
-<h1>Articles</h1>
 <div class="container">
-  <div class="row">
+  <H1>Derniers Articles</H1>
+  <div class="cards-recent">
     <% @articles.each do |article| %>
-      <div class="col-3">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path article.cover.key, crop: :fit %>')">
-          <%= link_to article.title, article_path(article) %>
+    <div class="card-recent">
+        <% if article.cover.attached?%>
+        <div class="card-recent-visuel" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path article.cover.key , alt: article.image, height: 400,  crop: :fit %>')">
+        <% end %>
         </div>
-      </div>
-    <% end %>
+      <div class="card-recent-footer">
+        <%= link_to article.title, article_path(article) %>
+    </div>
   </div>
-</div>
-
-
-
-<ul>
-  <% @articles.each do |article| %>
-    <p><li><%= link_to article.title, article_path(article) %></p>
-     <p><% if article.cover.attached?%>
-  <%=cl_image_tag article.cover.key , alt: article.image, height: 400, width: 400, crop: :fill  %> </p>
-  <% end %></li>
   <% end %>
-</ul>
+</div>
+</div>
+    <%# @articles.each do |article| %>
+      <p><li><%#= link_to article.title, article_path(article) %></p>
+      <p><%# if article.cover.attached?%>
+      <%#=cl_image_tag article.cover.key , alt: article.image, height: 400, width: 400, crop: :fill  %> </p>
+      <%# end %></li>
+    <%# end %>
 
