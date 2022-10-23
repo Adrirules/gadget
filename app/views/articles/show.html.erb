@@ -1,39 +1,53 @@
-hello from show.html.erb
-<h1><%=@article.title %></h1>
-  <p><%=@article.chapo %></p>
-  <p>
+<div class="container">
+  <div class="category-show">
+    <%=@article.category %>
+  </div>
+  <h1 class="title-show">
+    <%=@article.title %>
+  </h1>
+  <div class="chapo-show">
+    <%=@article.chapo %>
+  </div>
+  <div class="img-show">
     <% if @article.cover.attached?%>
-      <%=cl_image_tag @article.cover.key , alt: @article.image, height: 400, width: 400, crop: :fill  %>
+      <%=cl_image_tag @article.cover.key , alt: @article.image, height: 400, crop: :fill %>
     <% end %>
-  </p>
-
-  <p>
+  </div>
+  <div data-controller="richtext" class="content-show">
+    <%=@article.ontent%>
+  </div>
     <% if @article.photo.attached?%>
       <%=cl_image_tag @article.photo.key ,  height: 400, width: 400, crop: :fill  %>
     <% end %>
-  </p>
+    <div class="tags-show">
+     TAG : <% @article.tag_list.each do |tag| %>
+        <div class="tag-show">
+          <%=link_to tag, tagged_path(tag: tag)%>
+        </div>
+      <% end %>
+    </div>
+    <div class="share-show">
+    PARTAGER :
+      <a href="https://wa.me/?text=<%= request.original_url %>"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+</div>
 
-  <p>Balise Alt : <%=@article.image%> </p>
-  <div data-controller="richtext">
-    <p>Rich Content : <%=@article.ontent%> </p>
-  </div>
-  <p>La categ : <%=@article.category %></p>
-  <p>le Tag : <%=@article.tag %></p>
-  <p>L'auteur :<%=@article.author%> </p>
-  <% @article.tag_list.each do |tag| %>
-    <%=link_to tag, tagged_path(tag: tag)   %>
-  <% end %>
-
+<div>
   <% if policy(@article).edit?  %>
-    <p>
-      <%= link_to "Edit", edit_article_path(@article) %>
-    </p>
+    <%= link_to "Edit", edit_article_path(@article) %>
   <% end %>
+</div>
+<div>
   <% if policy(@article).destroy?  %>
     <div>
-     <%= button_to "Destroy", @article, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= button_to "Destroy", @article, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   <% end %>
-<p><%= link_to "All", root_path%></p>
+</div>
+<div>
+  <%= link_to "All", root_path%>
+</div>
 
 
