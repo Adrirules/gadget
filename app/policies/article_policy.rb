@@ -26,6 +26,10 @@ class ArticlePolicy < ApplicationPolicy
     record.user == user || user.admin
   end
 
+  def tagged?
+    true
+  end
+
 
 
 end

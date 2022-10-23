@@ -8,6 +8,7 @@
     <%= f.input :image,label: "Balise Alt", placeholder:"Pour le SEO ;)" %>
     <%= f.input :category, label: "Categories" %>
     <%= f.input :tag, label: "Tag" %>
+    <%= f.input :tag_list, as: :check_boxes, collection: [ "Burgers", "Cheap", "Beer"]%>
     <%= f.input :author , label: "Auteur.trice"%>
     <%= f.submit %>
   <% end %>

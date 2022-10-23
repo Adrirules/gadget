@@ -54,6 +54,7 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "cloudinary"
 gem "pundit"
+gem 'acts-as-taggable-on'
 
 
 group :development, :test do

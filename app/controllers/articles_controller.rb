@@ -36,12 +36,23 @@ class ArticlesController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
+  def tagged
+    if params[:tag].present?
+      @articles = Article.tagged_with(params[:tag])
+      authorize @articles
+
+    else
+      @articles = Aricle.all
+    end
+    render :index
+  end
+
   private
   def set_article
     @article = Article.find(params[:id])
     authorize @article
   end
   def article_params
-    params.require(:article).permit(:title, :chapo, :image, :content, :category, :tag, :author, :photo, :cover, :user, :ontent)
+    params.require(:article).permit(:title, :chapo, :image, :content, :category, :tag, :author, :photo, :cover, :user, :ontent, tag_list: [])
   end
 end
