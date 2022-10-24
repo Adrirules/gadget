@@ -8,11 +8,16 @@
   <div class="chapo-show">
     <%=@article.chapo %>
   </div>
-  <div class="img-show">
+  <%= render "share-button", article: @article %>
+
+
+
+  <div>
     <% if @article.cover.attached?%>
-      <%=cl_image_tag @article.cover.key , alt: @article.image, height: 400, crop: :fill %>
+      <div class="img-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @article.cover.key , alt: @article.image, crop: :fill %>')">
     <% end %>
   </div>
+
   <div data-controller="richtext" class="content-show">
     <%=@article.ontent%>
   </div>
@@ -26,12 +31,8 @@
         </div>
       <% end %>
     </div>
-    <div class="share-show">
-    PARTAGER :
-      <a href="https://wa.me/?text=<%= request.original_url %>"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-    </div>
+  <%= render "share-button", article: @article %>
+
 </div>
 
 <div>

@@ -4,7 +4,7 @@
     <% @articles.each do |article| %>
     <div class="card-recent">
       <% if article.cover.attached?%>
-        <div class="card-recent-visuel" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path article.cover.key , alt: article.image, height: 400,  crop: :fit %>')">
+        <div class="card-recent-visuel" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path article.cover.key , alt: article.image, crop: :fill %>')">
       <% end %>
         </div>
       <div class="card-recent-footer">
