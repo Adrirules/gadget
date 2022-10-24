@@ -11,6 +11,7 @@
   <%= render "share-button", article: @article %>
 
 
+<div class="date-show">Publié le <%= @article.created_at.strftime("%d/%m/%Y")%> - Mis à jour le <%= @article.updated_at.strftime("%d/%m/%Y")%></div>
 
   <div>
     <% if @article.cover.attached?%>
