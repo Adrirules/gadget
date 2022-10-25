@@ -15,7 +15,7 @@
 
   <div>
     <% if @article.cover.attached?%>
-      <div class="img-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @article.cover.key , alt: @article.image, crop: :fill %>')">
+      <div class="img-show" style="background-image:  url('<%= cl_image_path @article.cover.key , alt: @article.image, crop: :fill %>')">
     <% end %>
   </div>
 
@@ -51,5 +51,4 @@
 <div>
   <%= link_to "All", root_path%>
 </div>
-
-
+  <%= render "reco", article: @article %>

@@ -1,7 +1,6 @@
-<div class="container">
-  <H1>Derniers Articles</H1>
+<h1 class="title-reco">VOUS AIMEREZ SUREMENT :</h1>
   <div class="cards-recent">
-    <% @articles.each do |article| %>
+    <% @related_articles.each do |article| %>
       <%= link_to article_path(article) do %>
         <div class="card-recent">
           <% if article.cover.attached?%>
@@ -26,6 +25,3 @@
       <% end %>
     <% end %>
   </div>
-</div>
-
-

@@ -3,12 +3,12 @@
     <%= f.input :title, label: "Titre", placeholder: "Ton plus beau titre"%>
     <%= f.input :chapo, label: "Chapô", placeholder:"El Chapô" %>
     <%= f.input :cover, as: :file %>
-    <%= f.rich_text_area :ontent %>
-    <%= f.input :photo, as: :file %>
     <%= f.input :image,label: "Balise Alt", placeholder:"Pour le SEO ;)" %>
+    <%= f.rich_text_area :ontent %>
+    <%#= f.input :photo, as: :file %>
     <%= f.input :category, label: "Categories" %>
-    <%= f.input :tag, label: "Tag" %>
-    <%= f.input :tag_list, as: :check_boxes, collection: [ "Burgers", "Cheap", "Beer"]%>
+    <%#= f.input :tag, label: "Tag" %>
+    <%= f.input :tag_list, label: "Add tags", placeholder:"Pizza, Burger, Italien...", hint: "Add your tags, separated by commas"%>
     <%= f.input :author , label: "Auteur.trice"%>
     <%= f.submit %>
   <% end %>

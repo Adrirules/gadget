@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @related_articles = @article.find_related_tags
   end
 
   def new
@@ -40,9 +41,8 @@ class ArticlesController < ApplicationController
     if params[:tag].present?
       @articles = Article.tagged_with(params[:tag])
       authorize @articles
-
     else
-      @articles = Aricle.all
+      @articles = Article.all
     end
     render :index
   end
