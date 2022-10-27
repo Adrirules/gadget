@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
 
   def tagged
     if params[:tag].present?
-      @articles = Article.tagged_with(params[:tag])
+      @pagy, @articles = pagy(Article.tagged_with(params[:tag]))
       authorize @articles
     else
       @articles = Article.all
