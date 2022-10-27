@@ -9,22 +9,26 @@
     <%=@article.chapo %>
   </div>
   <%= render "share-button", article: @article %>
-
-
-<div class="date-show">Publié le <%= @article.created_at.strftime("%d/%m/%Y")%> - Mis à jour le <%= @article.updated_at.strftime("%d/%m/%Y")%></div>
+  <div class="date-show">
+    Publié le <%= @article.created_at.strftime("%d/%m/%Y")%> - Mis à jour le <%= @article.updated_at.strftime("%d/%m/%Y")%>
+  </div>
 
   <div>
     <% if @article.cover.attached?%>
-      <div class="img-show" style="background-image:  url('<%= cl_image_path @article.cover.key , alt: @article.image, crop: :fill %>')">
+      <div class="img-show" style="background-image:  url('<%= cl_image_path @article.cover.key , alt: @article.image, crop: :fill %>')"></div>
     <% end %>
   </div>
 
   <div data-controller="richtext" class="content-show">
     <%=@article.ontent%>
   </div>
-    <% if @article.photo.attached?%>
-      <%=cl_image_tag @article.photo.key ,  height: 400, width: 400, crop: :fill  %>
+
+  <div>
+    <% @article.photos.each do |photo| %>
+      <div class="img-show" style="background-image:  url('<%= cl_image_path photo.key , crop: :fill %>')"></div>
     <% end %>
+  </div>
+
     <div class="tags-show">
      TAG : <% @article.tag_list.each do |tag| %>
         <div class="tag-show">
@@ -34,21 +38,20 @@
     </div>
   <%= render "share-button", article: @article %>
 
-</div>
-
-<div>
-  <% if policy(@article).edit?  %>
-    <%= link_to "Edit", edit_article_path(@article) %>
-  <% end %>
-</div>
-<div>
-  <% if policy(@article).destroy?  %>
-    <div>
-      <%= button_to "Destroy", @article, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-  <% end %>
-</div>
-<div>
-  <%= link_to "All", root_path%>
-</div>
+  <div>
+    <% if policy(@article).edit?  %>
+      <%= link_to "Edit", edit_article_path(@article) %>
+    <% end %>
+  </div>
+  <div>
+    <% if policy(@article).destroy?  %>
+      <div>
+        <%= button_to "Destroy", @article, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to "All", root_path%>
+  </div>
   <%= render "reco", article: @article %>
+</div>
