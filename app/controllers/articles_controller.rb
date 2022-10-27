@@ -4,11 +4,11 @@ class ArticlesController < ApplicationController
 
 
   def index
-    @articles = policy_scope(Article)
+    @pagy,  @articles = pagy(policy_scope(Article).order(created_at: :desc))
   end
 
   def show
-    @related_articles = @article.find_related_tags
+    @related_articles = @article.find_related_tags.order(created_at: :desc).limit(3)
   end
 
   def new
