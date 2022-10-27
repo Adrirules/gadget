@@ -8,7 +8,7 @@
     <%= f.input :photos, as: :file, input_html:  {multiple: true} %>
     <%= f.input :category, label: "Categories" %>
     <%#= f.input :tag, label: "Tag" %>
-    <%= f.input :tag_list, label: "Add tags", placeholder:"Pizza, Burger, Italien...", hint: "Add your tags, separated by commas"%>
+    <%= f.input :tag_list, label: "Add tags", input_html:{ value: @article.tag_list.join(", ")}, placeholder:"Pizza, Burger, Italien...", hint: "Add your tags, separated by commas"%>
     <%= f.input :author , label: "Auteur.trice"%>
     <%= f.submit %>
   <% end %>
