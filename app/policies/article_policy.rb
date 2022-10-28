@@ -30,6 +30,8 @@ class ArticlePolicy < ApplicationPolicy
     true
   end
 
-
+  def categged?
+    true
+  end
 
 end

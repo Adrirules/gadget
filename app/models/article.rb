@@ -3,7 +3,7 @@ class Article < ApplicationRecord
   has_many_attached :photos
   belongs_to :user
   has_rich_text :ontent
-  acts_as_taggable_on :tags
+  acts_as_taggable_on :tags , :categs
 
   extend FriendlyId
   friendly_id :title , use: [:slugged, :history]

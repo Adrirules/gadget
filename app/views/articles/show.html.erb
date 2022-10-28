@@ -36,6 +36,14 @@
         </div>
       <% end %>
     </div>
+
+    <div class="tags-show">
+     VILLE : <% @article.categ_list.each do |categ| %>
+        <div class="tag-show">
+          <%=link_to categ, categged_path(categ: categ)%>
+        </div>
+      <% end %>
+    </div>
   <%= render "share-button", article: @article %>
 
   <div>
@@ -54,4 +62,6 @@
     <%= link_to "All", root_path%>
   </div>
   <%= render "reco", article: @article %>
+    <%= render "recoville", article: @article %>
+
 </div>
