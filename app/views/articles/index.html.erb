@@ -29,7 +29,10 @@
   <div class="pagination">
     <%== pagy_bootstrap_nav(@pagy) %>
   </div>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+    <% if user_signed_in? %>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <% else %>
+      <% end %>
 </div>
 
 
