@@ -1,9 +1,48 @@
 .navbar-adri {
-
   margin: 30px;
-
+  height: 200px;
+  font-size: 32px;
+  border-bottom: solid 1px #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+.navbar-home{
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.navbar-adri a {
+  color: black;
+    //font-size: 16px;
+}
+
+.navbar-adri ul {
+  //text-align: right;
+  list-style-type: none;
+  text-align: right;
+}
+
 .navbar-links a {
   text-decoration: none;
   list-style: none;
+  color: black;
 }
+
+.navbar-links a:hover {
+    color: grey;
+
+}
+
+
+@media (max-width:575px) {
+  .navbar-home {
+      font-size: 32px;
+      font-weight: bold;
+    }
+   .navbar-links a {
+      font-size: 16px;
+   }
+
+}
+
