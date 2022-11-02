@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+   devise_for :users, controllers: { confirmations: 'users/confirmations' }
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   root to: "articles#index"
   resources :articles, except: :index
   get '/categged', to: "articles#categged", as: :categged
