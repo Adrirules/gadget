@@ -5,6 +5,7 @@ class Article < ApplicationRecord
   has_rich_text :ontent
   acts_as_taggable_on :tags , :categs
 
+
   extend FriendlyId
   friendly_id :title , use: [:slugged, :history]
 

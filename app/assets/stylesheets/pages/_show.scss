@@ -1,3 +1,8 @@
+.container-show {
+  max-width: 640px;
+  margin: auto;
+}
+
 .category-show {
   padding: 1px 10px;
   text-transform: uppercase;
@@ -6,6 +11,9 @@
   background-color: $category;
   margin-bottom: 20px;
   margin-top: 20px;
+  a {
+    color: $black;
+  }
 }
 
 .title-show{
@@ -33,8 +41,8 @@
   height: 500px;
   background-size: cover;
   background-position: center;
-
 }
+
 
 .content-show {
   border-bottom: 1px solid $black;
@@ -64,3 +72,45 @@ a:hover {
   border-bottom: 1px solid $black;
 }
 
+@media (max-width:575px) {
+  .cover-show img {
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 576px) {
+  .cover-show img {
+    max-width: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cover-show img {
+    max-width:  640px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cover-show img {
+    max-width: 640px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cover-show img {
+    max-width: 640px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}

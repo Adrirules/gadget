@@ -6,10 +6,10 @@
     <%= f.input :image,label: "Balise Alt", placeholder:"Pour le SEO ;)" %>
     <%= f.rich_text_area :ontent %>
     <%= f.input :photos, as: :file, input_html:  {multiple: true} %>
-    <%#= f.input :category, label: "Categories" %>
+    <%#= f.input :category, label: "Balise alt", hint:"ajoute tes balises séparés par une virgule" %>
     <%#= f.input :tag, label: "Tag" %>
     <%= f.input :categ_list, label: "Ajoute ta Ville", input_html:{ value: @article.categ_list.join(", ")}, placeholder:"le nom de la ville", hint: "Ajoute juste 1 ville"%>
-    <%= f.input :tag_list, label: "Ajoute tes tags", input_html:{ value: @article.tag_list.join(", ")}, placeholder:"Pizza, Burger, Italien...", hint: "Add your tags, separated by commas"%>
+    <%= f.input :tag_list, label: "Ajoute tes tags", input_html:{ value: @article.tag_list.join(", ")}, placeholder:"Pizza, Burger, Italien...", hint: "ajoute tes tags, separés par une virgule"%>
     <%= f.input :author , label: "Auteur.trice"%>
     <%= f.submit %>
   <% end %>

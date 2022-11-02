@@ -1,33 +1,40 @@
 <div class="container">
   <div class="category-show">
-    <%=@article.category %>
+    <% @article.categ_list.each do |categ| %>
+        <%=link_to categ, categged_path(categ: categ)%>
+    <% end %>
   </div>
   <h1 class="title-show">
     <%=@article.title %>
   </h1>
-  <div class="chapo-show">
-    <%=@article.chapo %>
-  </div>
-  <%= render "share-button", article: @article %>
-  <div class="date-show">
-    Publié le <%= @article.created_at.strftime("%d/%m/%Y")%> - Mis à jour le <%= @article.updated_at.strftime("%d/%m/%Y")%>
+  <div class="container-show">
+
+    <div class="chapo-show">
+      <%=@article.chapo %>
+    </div>
+    <div class="date-show">
+      Publié le <%= @article.created_at.strftime("%d/%m/%Y")%> - Mis à jour le <%= @article.updated_at.strftime("%d/%m/%Y")%>
+    </div>
+
+    <div>
+      <% if @article.cover.attached?%>
+        <div class="cover-show"><%= cl_image_tag @article.cover.key , crop: :fill, alt: @article.image %></div>
+      <% end %>
+    </div>
+
+
+    <div data-controller="richtext" class="content-show">
+      <%=@article.ontent%>
+    </div>
+
+
+    <div>
+      <% @article.photos.each do |photo|%>
+        <div class="cover-show"><%= cl_image_tag photo.key , crop: :fill %></div>
+      <% end %>
+    </div>
   </div>
 
-  <div>
-    <% if @article.cover.attached?%>
-      <div class="img-show" style="background-image:  url('<%= cl_image_path @article.cover.key , alt: @article.image, crop: :fill %>')"></div>
-    <% end %>
-  </div>
-
-  <div data-controller="richtext" class="content-show">
-    <%=@article.ontent%>
-  </div>
-
-  <div>
-    <% @article.photos.each do |photo| %>
-      <div class="img-show" style="background-image:  url('<%= cl_image_path photo.key , crop: :fill %>')"></div>
-    <% end %>
-  </div>
 
     <div class="tags-show">
      TAG : <% @article.tag_list.each do |tag| %>
@@ -58,10 +65,6 @@
       </div>
     <% end %>
   </div>
-  <div>
-    <%= link_to "All", root_path%>
-  </div>
   <%= render "reco", article: @article %>
   <%= render "recoville", article: @article %>
-
 </div>
