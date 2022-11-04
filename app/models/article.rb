@@ -1,6 +1,17 @@
 class Article < ApplicationRecord
   has_one_attached :cover
-  has_many_attached :photos
+  has_one_attached :photo
+  has_one_attached :photodeux
+  has_one_attached :phototrois
+  has_one_attached :photoquatre
+  has_one_attached :photocinq
+  has_one_attached :photosix
+  has_one_attached :photosept
+  has_one_attached :photohuit
+  has_one_attached :photoneuf
+  has_one_attached :photodix
+
+
   belongs_to :user
   has_rich_text :ontent
   acts_as_taggable_on :tags , :categs

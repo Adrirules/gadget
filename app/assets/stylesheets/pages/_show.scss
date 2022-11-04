@@ -50,27 +50,32 @@
 }
 
 .tag-show {
-  padding: 1px 10px;
   text-transform: uppercase;
   border: 1px solid $black;
   display: inline-block;
   margin: 20px 0px 20px 20px;
 a {
+    padding: 3px 10px;
     text-decoration: none;
     text-transform: uppercase;
-    background-color: $white;
     color: $black;
   }
 
 a:hover {
-  background-color: $black;
   color: $white;
   }
+}
+.tag-show:hover {
+background-color: $black;
+}
+.tag-show:hover a {
+    color: $white;
 }
 
 .tags-show {
   border-bottom: 1px solid $black;
 }
+
 
 @media (max-width:575px) {
   .cover-show img {

@@ -70,6 +70,6 @@ class ArticlesController < ApplicationController
     authorize @article
   end
   def article_params
-    params.require(:article).permit(:title, :chapo, :image, :content, :category, :tag, :author, :cover, :user, :ontent, :tag_list, :categ_list, :photos => [])
+    params.require(:article).permit(:title, :chapo, :alt, :altun, :altdeux, :alttrois, :altquatre, :altcinq, :altsix, :altsept, :althuit, :altneuf, :altdix, :content, :category, :tag, :author, :cover, :user, :ontent, :tag_list, :categ_list, :photo, :photodeux, :phototrois, :photoquatre,:photocinq, :photosix, :photosept, :photohuit, :photoneuf, :photodix)
   end
 end

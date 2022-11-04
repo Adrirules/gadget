@@ -18,23 +18,70 @@
 
     <div>
       <% if @article.cover.attached?%>
-        <div class="cover-show"><%= cl_image_tag @article.cover.key , crop: :fill, fetch_format: :auto,quality: 30,  alt: @article.image %></div>
+        <div class="cover-show"><%= cl_image_tag @article.cover.key, crop: :fill, fetch_format: :auto,quality: 30,  alt: @article.alt %></div>
       <% end %>
     </div>
-
-
     <div data-controller="richtext" class="content-show">
       <%=@article.ontent%>
     </div>
-
+    <div>
+      <% if @article.photo.attached?%>
+        <div class="cover-show"><%= cl_image_tag @article.photo.key, crop: :fill, fetch_format: :auto,quality: 30,  alt: @article.altun %></div>
+      <% end %>
+    </div>
+    <div>
+      <% if @article.photodeux.attached?%>
+        <div class="cover-show"><%= cl_image_tag @article.photodeux.key, crop: :fill, fetch_format: :auto,quality: 30,  alt: @article.altdeux %></div>
+      <% end %>
+    </div>
+    <div>
+      <% if @article.phototrois.attached?%>
+        <div class="cover-show"><%= cl_image_tag @article.phototrois.key, crop: :fill, fetch_format: :auto,quality: 30,  alt: @article.alttrois %></div>
+      <% end %>
+    </div>
 
     <div>
-      <% @article.photos.each do |photo|%>
-        <div class="cover-show"><%= cl_image_tag photo.key ,fetch_format: :auto, crop: :fill, quality: 30 %></div>
+      <% if @article.photoquatre.attached?%>
+        <div class="cover-show"><%= cl_image_tag @article.photoquatre.key, crop: :fill, fetch_format: :auto,quality: 30,  alt: @article.altquatre %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <% if @article.photocinq.attached?%>
+        <div class="cover-show"><%= cl_image_tag @article.photocinq.key, crop: :fill, fetch_format: :auto,quality: 30,  alt: @article.altcinq %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <% if @article.photosix.attached?%>
+        <div class="cover-show"><%= cl_image_tag @article.photosix.key, crop: :fill, fetch_format: :auto,quality: 30,  alt: @article.altsix %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <% if @article.photosept.attached?%>
+        <div class="cover-show"><%= cl_image_tag @article.photosept.key, crop: :fill, fetch_format: :auto,quality: 30,  alt: @article.altsept %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <% if @article.photohuit.attached?%>
+        <div class="cover-show"><%= cl_image_tag @article.photohuit.key, crop: :fill, fetch_format: :auto,quality: 30,  alt: @article.althuit %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <% if @article.photoneuf.attached?%>
+        <div class="cover-show"><%= cl_image_tag @article.photoneuf.key, crop: :fill, fetch_format: :auto,quality: 30,  alt: @article.altneuf %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <% if @article.photodix.attached?%>
+        <div class="cover-show"><%= cl_image_tag @article.photodix.key, crop: :fill, fetch_format: :auto,quality: 30,  alt: @article.altdix %></div>
       <% end %>
     </div>
   </div>
-
 
     <div class="tags-show">
      TAG : <% @article.tag_list.each do |tag| %>

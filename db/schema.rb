@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_02_091506) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_04_111818) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_091506) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "chapo"
-    t.string "image"
+    t.string "alt"
     t.text "content"
     t.string "category"
     t.string "tag"
@@ -64,6 +64,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_091506) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.string "slug"
+    t.string "altun"
+    t.string "photodeux"
+    t.string "altdeux"
+    t.string "phototrois"
+    t.string "alttrois"
+    t.string "photoquatre"
+    t.string "altquatre"
+    t.string "photocinq"
+    t.string "altcinq"
+    t.string "photosix"
+    t.string "altsix"
+    t.string "photosept"
+    t.string "altsept"
+    t.string "photohuit"
+    t.string "althuit"
+    t.string "photoneuf"
+    t.string "altneuf"
+    t.string "photodix"
+    t.string "altdix"
     t.index ["slug"], name: "index_articles_on_slug", unique: true
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
