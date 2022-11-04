@@ -1,3 +1,10 @@
+      <!-- app/views/offers/show.html.erb -->
+<% content_for :meta_title, "#{@article.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @article.chapo %>
+<% content_for :meta_image, cl_image_path(@article.cover.url) %>
+
+
+
 <div class="container">
   <div class="category-show">
     <% @article.categ_list.each do |categ| %>
@@ -118,3 +125,6 @@
 </div>
       <% else %>
       <% end %>
+
+
+

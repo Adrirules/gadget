@@ -1,0 +1,5 @@
+meta_product_name: "Où manger"
+meta_title: "Où manger - Rien que de bonnes adresses"
+meta_description: "Site qui regroupe tous les restaurants que je teste et que j'aime"
+meta_image: "oumanger.jpg" # should exist in `app/assets/images/`
+twitter_account: "@julilicoco"   # required for Twitter Cards
