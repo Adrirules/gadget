@@ -18,7 +18,7 @@
 
     <div>
       <% if @article.cover.attached?%>
-        <div class="cover-show"><%= cl_image_tag @article.cover.key , crop: :fill, fetch_format: :auto,quality: 50,  alt: @article.image %></div>
+        <div class="cover-show"><%= cl_image_tag @article.cover.key , crop: :fill, fetch_format: :auto,quality: 30,  alt: @article.image %></div>
       <% end %>
     </div>
 
@@ -30,7 +30,7 @@
 
     <div>
       <% @article.photos.each do |photo|%>
-        <div class="cover-show"><%= cl_image_tag photo.key ,fetch_format: :auto, crop: :fill, quality: 50 %></div>
+        <div class="cover-show"><%= cl_image_tag photo.key ,fetch_format: :auto, crop: :fill, quality: 30 %></div>
       <% end %>
     </div>
   </div>
