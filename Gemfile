@@ -57,6 +57,8 @@ gem "pundit"
 gem "acts-as-taggable-on"
 gem "pagy", "~> 5.10"
 gem 'friendly_id', '~> 5.4.0'
+gem 'bootstrap', '~> 5.2.2'
+
 
 
 group :development, :test do
